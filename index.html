@@ -13,31 +13,34 @@
 <body>
     <div class="container">
         <div class="box">
-            <input type="text" id="display" class="form-control" disabled>
+            <div  id="display"> 
+                <div id="prevInput">78</div>
+                <div id="currentInput"> </div>
+            </div>
             
-            <div class="all-btns justify-content-between">
-                <button class="btn btn-danger col-span-2" > C </button>
-                <button class="btn btn-warning"> CE </button>
-                <button class="btn btn-info"> ÷ </button>
+            <div class="all-btns" id="all-btns">
+                <button class="btn btn-danger remove col-span-2" > C </button>
+                <button class="btn btn-warning delete"> CE </button>
+                <button class="btn btn-info operator"> ÷ </button>
 
-                <button class="btn btn-primary"> 7 </button>
-                <button class="btn btn-primary"> 8 </button>
-                <button class="btn btn-primary"> 9 </button>
-                <button class="btn btn-info"> × </button>
+                <button class="btn btn-primary number"> 7 </button>
+                <button class="btn btn-primary number"> 8 </button>
+                <button class="btn btn-primary number"> 9 </button>
+                <button class="btn btn-info operator"> × </button>
 
-                <button class="btn btn-primary"> 4 </button>
-                <button class="btn btn-primary"> 5 </button>
-                <button class="btn btn-primary"> 6 </button>
-                <button class="btn btn-info row-span-2"> + </button>
+                <button class="btn btn-primary number"> 4 </button>
+                <button class="btn btn-primary number"> 5 </button>
+                <button class="btn btn-primary number"> 6 </button>
+                <button class="btn btn-info operator row-span-2"> + </button>
 
-                <button class="btn btn-primary"> 1 </button>
-                <button class="btn btn-primary"> 2 </button>
-                <button class="btn btn-primary"> 3 </button>
-                <button class="btn btn-info"> . </button>
+                <button class="btn btn-primary number"> 1 </button>
+                <button class="btn btn-primary number"> 2 </button>
+                <button class="btn btn-primary number"> 3 </button>
+                <button class="btn btn-info operator"> . </button>
 
-                <button class="btn btn-primary"> 0 </button>
-                <button class="btn btn-outline-success"> = </button>
-                <button class="btn btn-info"> - </button>
+                <button class="btn btn-primary number"> 0 </button>
+                <button class="btn btn-outline-success result"> = </button>
+                <button class="btn btn-info operator"> - </button>
             </div>
         </div>
     </div>
