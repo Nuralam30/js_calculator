@@ -28,7 +28,7 @@ allBtns.addEventListener('click', function(e){
         inputnumber = '';
     }
     if(btn.classList.contains('delete')) {
-        inputnumber.pop();
+        inputnumber = inputnumber.toString().slice(0, -1);
         currentDisplay.innerHTML = inputnumber;
     }
     if(btn.classList.contains('result')) {
