@@ -4,6 +4,8 @@ const currentDisplay = document.getElementById('currentInput');
 const prevDisplay = document.getElementById('prevInput');
 
 var inputnumber = '';
+var operator ;
+
 
 
 allBtns.addEventListener('click', function(e){
@@ -17,8 +19,8 @@ allBtns.addEventListener('click', function(e){
         currentDisplay.innerHTML = inputnumber;
     }
     if(btn.classList.contains('operator')) {
-        inputnumber = inputnumber + btn.innerText;
-        prevDisplay.innerHTML = inputnumber;
+        // inputnumber = inputnumber + btn.innerText;
+        prevDisplay.innerHTML = currentDisplay.innerHTML + btn.innerText;
         currentDisplay.innerHTML = '';
         inputnumber = '';
     }
@@ -26,17 +28,52 @@ allBtns.addEventListener('click', function(e){
         currentDisplay.innerHTML = '';
         prevDisplay.innerHTML = '';
         inputnumber = '';
+        operator = '';
     }
     if(btn.classList.contains('delete')) {
         inputnumber = inputnumber.toString().slice(0, -1);
         currentDisplay.innerHTML = inputnumber;
     }
     if(btn.classList.contains('result')) {
-        const inputValue = currentDisplay.innerHTML; 
-        var result = parseFloat(inputValue)
-        // console.log(typeof(result))
+        calculation();
     }
 });
 
+
+function calculation(){
+    var prevInput = parseFloat(prevDisplay.innerHTML);
+    var currentInput = parseFloat(currentDisplay.innerHTML);
+    operator = prevDisplay.innerHTML.slice(-1);
+    
+    
+
+    switch(operator){
+        case '+':
+            var result = prevInput + currentInput;
+            prevDisplay.innerHTML = prevDisplay.innerHTML + currentDisplay.innerHTML;
+            break;
+
+        case '-':
+            var result = prevInput - currentInput;
+            prevDisplay.innerHTML = prevDisplay.innerHTML + currentDisplay.innerHTML;
+            break;
+
+        case '÷':
+            var result = prevInput / currentInput;
+            prevDisplay.innerHTML = prevDisplay.innerHTML + currentDisplay.innerHTML;
+            break;
+
+        case '×':
+            var result = prevInput * currentInput;
+            prevDisplay.innerHTML = prevDisplay.innerHTML + currentDisplay.innerHTML;
+            break;
+
+        default:
+            return
+    }
+    currentDisplay.innerHTML = result;
+    
+        
+}
 
 // console.log(display.innerHTML.length)
