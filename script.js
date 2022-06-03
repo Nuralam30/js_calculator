@@ -11,6 +11,7 @@ var operator ;
 allBtns.addEventListener('click', function(e){
     const btn = e.target;
 
+    // number buttons event 
     if(btn.classList.contains('number')) {
         if(btn.innerText === '.' && currentDisplay.innerHTML.includes('.')){
             return
@@ -18,27 +19,40 @@ allBtns.addEventListener('click', function(e){
         inputnumber = inputnumber.toString() + btn.innerText.toString();
         currentDisplay.innerHTML = inputnumber;
     }
+
+
+    // operator button event
     if(btn.classList.contains('operator')) {
         prevDisplay.innerHTML = currentDisplay.innerHTML + btn.innerText;
         currentDisplay.innerHTML = '';
         inputnumber = '';
     }
+
+
+    // all delete button event
     if(btn.classList.contains('remove')) {
         currentDisplay.innerHTML = '';
         prevDisplay.innerHTML = '';
         inputnumber = '';
         operator = '';
     }
+
+    // single delete button
     if(btn.classList.contains('delete')) {
         inputnumber = inputnumber.toString().slice(0, -1);
         currentDisplay.innerHTML = inputnumber;
     }
+
+
+    // result or equal buuton
     if(btn.classList.contains('result')) {
         calculation();
     }
 });
 
 
+
+// calculation functionality
 function calculation(){
     var prevInput = parseFloat(prevDisplay.innerHTML);
     var currentInput = parseFloat(currentDisplay.innerHTML);
