@@ -19,7 +19,6 @@ allBtns.addEventListener('click', function(e){
         currentDisplay.innerHTML = inputnumber;
     }
     if(btn.classList.contains('operator')) {
-        // inputnumber = inputnumber + btn.innerText;
         prevDisplay.innerHTML = currentDisplay.innerHTML + btn.innerText;
         currentDisplay.innerHTML = '';
         inputnumber = '';
