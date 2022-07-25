@@ -23,9 +23,17 @@ allBtns.addEventListener('click', function(e){
 
     // operator button event
     if(btn.classList.contains('operator')) {
-        prevDisplay.innerHTML = currentDisplay.innerHTML + btn.innerText;
-        currentDisplay.innerHTML = '';
-        inputnumber = '';
+        if(!prevDisplay.innerHTML){
+            prevDisplay.innerHTML = currentDisplay.innerHTML + btn.innerText;
+            currentDisplay.innerHTML = '';
+            inputnumber = '';
+        }
+        else{
+            calculation();
+            prevDisplay.innerHTML = currentDisplay.innerHTML + btn.innerText;
+            currentDisplay.innerHTML = '';
+            inputnumber = '';
+        }
     }
 
 
@@ -55,6 +63,7 @@ allBtns.addEventListener('click', function(e){
 // calculation functionality
 function calculation(){
     var prevInput = parseFloat(prevDisplay.innerHTML);
+    console.log(prevInput)
     var currentInput = parseFloat(currentDisplay.innerHTML);
     operator = prevDisplay.innerHTML.slice(-1);
     
