@@ -81,7 +81,7 @@ function calculation(){
             break;
 
         case '÷':
-            var result = prevInput / currentInput;
+            var result = (prevInput / currentInput).toFixed(10);
             prevDisplay.innerHTML = prevDisplay.innerHTML + currentDisplay.innerHTML;
             break;
 
